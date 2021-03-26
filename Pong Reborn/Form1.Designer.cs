@@ -32,7 +32,7 @@
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.p1ScoreLabel = new System.Windows.Forms.Label();
             this.p2ScoreLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.fastButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // gameTimer
@@ -69,17 +69,17 @@
             this.p2ScoreLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.p2ScoreLabel.Visible = false;
             // 
-            // button1
+            // fastButton
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("NewsGoth BdXCn BT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(50, 203);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 55);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Fast Pace";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.fastButton.BackColor = System.Drawing.Color.White;
+            this.fastButton.Font = new System.Drawing.Font("NewsGoth BdXCn BT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fastButton.Location = new System.Drawing.Point(50, 203);
+            this.fastButton.Name = "fastButton";
+            this.fastButton.Size = new System.Drawing.Size(98, 55);
+            this.fastButton.TabIndex = 3;
+            this.fastButton.Text = "Fast Pace";
+            this.fastButton.UseVisualStyleBackColor = false;
+            this.fastButton.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Form1
             // 
@@ -87,7 +87,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(600, 400);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.fastButton);
             this.Controls.Add(this.p2ScoreLabel);
             this.Controls.Add(this.p1ScoreLabel);
             this.DoubleBuffered = true;
@@ -95,6 +95,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pong Reborn";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
@@ -108,7 +109,7 @@
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.Label p1ScoreLabel;
         private System.Windows.Forms.Label p2ScoreLabel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button fastButton;
     }
 }
 
