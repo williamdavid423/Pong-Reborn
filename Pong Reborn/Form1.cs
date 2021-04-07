@@ -39,10 +39,7 @@ namespace Pong_Reborn
         bool sDown = false;
         bool upArrowDown = false;
         bool downArrowDown = false;
-        bool aDown = false;
-        bool dDown = false;
-        bool leftArrowDown = false;
-        bool rightArrowDown = false;
+
 
 
         SolidBrush blueBrush = new SolidBrush(Color.DodgerBlue);
@@ -93,13 +90,13 @@ namespace Pong_Reborn
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-        
-                e.Graphics.FillRectangle(whiteBrush, ballX, ballY, ballWidth, ballHeight);
 
-                e.Graphics.FillRectangle(blueBrush, paddle1X, paddle1Y, paddleWidth, paddleHeight);
-                e.Graphics.FillRectangle(blueBrush, paddle2X, paddle2Y, paddleWidth, paddleHeight);
-            
-            
+            e.Graphics.FillRectangle(whiteBrush, ballX, ballY, ballWidth, ballHeight);
+
+            e.Graphics.FillRectangle(blueBrush, paddle1X, paddle1Y, paddleWidth, paddleHeight);
+            e.Graphics.FillRectangle(blueBrush, paddle2X, paddle2Y, paddleWidth, paddleHeight);
+
+
         }
 
         private void GameTimer_Tick(object sender, EventArgs e)
@@ -111,7 +108,6 @@ namespace Pong_Reborn
             {
                 paddle1Y -= paddleSpeed;
             }
-
             if (sDown == true && paddle1Y < this.Height - paddleHeight)
             {
                 paddle1Y += paddleSpeed;
@@ -121,33 +117,33 @@ namespace Pong_Reborn
             {
                 paddle2Y -= paddleSpeed;
             }
-
             if (downArrowDown == true && paddle2Y < this.Height - paddleHeight)
             {
                 paddle2Y += paddleSpeed;
             }
+
             Refresh();
-       
+
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            ////if (scene == 0) { scene = 1; }
+            if (scene == 0) { scene = 1; }
 
-            ////switch (scene)
-            ////{
-            ////    case 0:
+            switch (scene)
+            {
+                case 0:
 
-            ////        break;
-            ////    case 1:
-            ////        p1ScoreLabel.Visible = true;
-            ////        p2ScoreLabel.Visible = true;
-            ////        fastButton.Visible = false;
-            ////        break;
-            ////    case 2:
+                    break;
+                case 1:
+                    p1ScoreLabel.Visible = true;
+                    p2ScoreLabel.Visible = true;
+                    fastButton.Visible = false;
+                    break;
+                case 2:
 
-            ////        break;
-            ////}
+                    break;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
